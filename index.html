@@ -2,7 +2,7 @@
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="utf-8">
-    <title>SEO Masterclass: Professional Strategy</title>
+    <title>Big Data Masterclass: کلان داده</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- Professional Persian Fonts -->
@@ -18,17 +18,17 @@
 
     <style>
         :root {
-            --primary: #6366f1;
-            --primary-light: #818cf8;
-            --secondary: #f472b6;
-            --accent: #22d3ee;
-            --gold: #fbbf24;
-            --success: #34d399;
-            --danger: #f87171;
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --secondary: #ec4899;
+            --accent: #06b6d4;
+            --gold: #f59e0b;
+            --success: #10b981;
+            --danger: #ef4444;
             --dark: #0f172a;
             --darker: #020617;
-            --glass: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.08);
             --text: #e2e8f0;
             --text-muted: #94a3b8;
         }
@@ -41,7 +41,6 @@
             background: var(--darker);
         }
 
-        /* Animated Background */
         .reveal .slides {
             background: transparent;
         }
@@ -51,109 +50,25 @@
             color: var(--text);
         }
 
-        .reveal::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(ellipse at 20% 20%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 80% 80%, rgba(244, 114, 182, 0.15) 0%, transparent 50%),
-                radial-gradient(ellipse at 50% 50%, rgba(34, 211, 238, 0.05) 0%, transparent 70%);
-            pointer-events: none;
-            z-index: -1;
-            animation: bgPulse 15s ease-in-out infinite;
-        }
-
-        @keyframes bgPulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.7; }
-        }
-
-        /* Floating Particles */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            overflow: hidden;
-            z-index: -1;
-        }
-
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: var(--primary);
-            border-radius: 50%;
-            opacity: 0.3;
-            animation: float 20s infinite;
-        }
-
-        .particle:nth-child(1) { left: 10%; animation-delay: 0s; background: var(--primary); }
-        .particle:nth-child(2) { left: 20%; animation-delay: 2s; background: var(--secondary); }
-        .particle:nth-child(3) { left: 30%; animation-delay: 4s; background: var(--accent); }
-        .particle:nth-child(4) { left: 40%; animation-delay: 6s; background: var(--gold); }
-        .particle:nth-child(5) { left: 50%; animation-delay: 8s; background: var(--success); }
-        .particle:nth-child(6) { left: 60%; animation-delay: 10s; background: var(--primary); }
-        .particle:nth-child(7) { left: 70%; animation-delay: 12s; background: var(--secondary); }
-        .particle:nth-child(8) { left: 80%; animation-delay: 14s; background: var(--accent); }
-        .particle:nth-child(9) { left: 90%; animation-delay: 16s; background: var(--gold); }
-
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(100vh) scale(0);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.5;
-            }
-            90% {
-                opacity: 0.5;
-            }
-            100% {
-                transform: translateY(-10vh) scale(1);
-                opacity: 0;
-            }
-        }
-
-        /* Headlines with Gradients */
+        /* Headlines */
         .reveal h1, .reveal h2, .reveal h3 {
             font-family: 'Vazirmatn', sans-serif;
-            font-weight: 900;
+            font-weight: 700;
             text-transform: none;
             letter-spacing: -0.02em;
         }
 
         .reveal h1 {
-            font-size: 3.5em;
-            background: linear-gradient(135deg, var(--gold) 0%, #fde68a 50%, var(--gold) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            text-shadow: none;
-            animation: shimmer 3s ease-in-out infinite;
-            background-size: 200% auto;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { background-position: 0% center; }
-            50% { background-position: 200% center; }
+            font-size: 3.2em;
+            color: var(--gold);
         }
 
         .reveal h2 {
-            font-size: 2.2em;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-size: 2em;
+            color: var(--primary-light);
             position: relative;
-            padding-bottom: 25px;
-            margin-bottom: 40px;
+            padding-bottom: 20px;
+            margin-bottom: 35px;
         }
 
         .reveal h2::after {
@@ -162,92 +77,54 @@
             bottom: 0;
             right: 50%;
             transform: translateX(50%);
-            width: 100px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            width: 60px;
+            height: 3px;
+            background: var(--primary);
             border-radius: 2px;
         }
 
         .reveal h3 {
-            font-size: 1.8em;
+            font-size: 1.6em;
             color: white;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
-        /* Glass Cards */
+        /* Cards */
         .glass-card {
-            background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.02) 100%);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
             margin: 20px 0;
             text-align: right;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1) 0%, transparent 50%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .glass-card:hover::before {
-            opacity: 1;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-5px);
-            border-color: rgba(99, 102, 241, 0.3);
-            box-shadow: 
-                0 25px 50px -12px rgba(0, 0, 0, 0.5),
-                0 0 50px -12px rgba(99, 102, 241, 0.3);
         }
 
         /* Icon Cards */
         .icon-card {
-            background: linear-gradient(135deg, var(--glass) 0%, transparent 100%);
-            border: 1px solid var(--glass-border);
-            border-radius: 24px;
-            padding: 35px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 30px;
             text-align: center;
-            position: relative;
-            transition: all 0.4s ease;
         }
 
         .icon-card .icon {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 20px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 15px;
+            background: var(--primary);
+            border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 36px;
+            font-size: 28px;
             color: white;
-            box-shadow: 0 15px 35px -10px rgba(99, 102, 241, 0.5);
-            transition: all 0.4s ease;
-        }
-
-        .icon-card:hover .icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 20px 40px -10px rgba(99, 102, 241, 0.6);
         }
 
         .icon-card h4 {
             color: white;
-            font-size: 1.3em;
-            margin-bottom: 10px;
+            font-size: 1.2em;
+            margin-bottom: 8px;
         }
 
         .icon-card p {
@@ -256,93 +133,82 @@
             line-height: 1.6;
         }
 
-        /* Concept Box with Glow */
+        /* Concept Box */
         .concept-box {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(99, 102, 241, 0.02) 100%);
-            border-right: 4px solid var(--primary);
-            padding: 25px 30px;
-            margin: 25px 0;
-            border-radius: 16px;
+            background: rgba(139, 92, 246, 0.08);
+            border-right: 3px solid var(--primary);
+            padding: 20px 25px;
+            margin: 20px 0;
+            border-radius: 8px;
             text-align: right;
-            position: relative;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
         .concept-box strong {
             color: var(--primary-light);
-            font-weight: 700;
         }
 
-        /* Pro Tips with Animation */
+        /* Pro Tips */
         .pro-tip {
-            background: linear-gradient(135deg, rgba(251, 191, 36, 0.15) 0%, rgba(251, 191, 36, 0.02) 100%);
-            border: 1px solid rgba(251, 191, 36, 0.3);
+            background: rgba(245, 158, 11, 0.08);
+            border: 1px solid rgba(245, 158, 11, 0.2);
             color: var(--gold);
-            padding: 20px 25px;
+            padding: 18px 22px;
             font-size: 0.85em;
-            border-radius: 16px;
-            margin-top: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 12px;
             text-align: right;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .pro-tip::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(135deg, transparent 45%, rgba(251, 191, 36, 0.1) 50%, transparent 55%);
-            animation: tipShine 3s ease-in-out infinite;
-        }
-
-        @keyframes tipShine {
-            0% { transform: translateX(-100%) translateY(100%); }
-            100% { transform: translateX(100%) translateY(-100%); }
         }
 
         .pro-tip i {
-            font-size: 1.5em;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
+            font-size: 1.3em;
+            margin-top: 2px;
         }
 
         /* Warning Box */
         .warning-box {
-            background: linear-gradient(135deg, rgba(248, 113, 113, 0.15) 0%, rgba(248, 113, 113, 0.02) 100%);
-            border: 1px solid rgba(248, 113, 113, 0.3);
+            background: rgba(239, 68, 68, 0.08);
+            border: 1px solid rgba(239, 68, 68, 0.2);
             color: var(--danger);
-            padding: 20px 25px;
+            padding: 18px 22px;
             font-size: 0.85em;
-            border-radius: 16px;
-            margin-top: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
             display: flex;
             align-items: flex-start;
-            gap: 15px;
+            gap: 12px;
             text-align: right;
         }
 
         /* Success Box */
         .success-box {
-            background: linear-gradient(135deg, rgba(52, 211, 153, 0.15) 0%, rgba(52, 211, 153, 0.02) 100%);
-            border: 1px solid rgba(52, 211, 153, 0.3);
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
             color: var(--success);
-            padding: 20px 25px;
+            padding: 18px 22px;
             font-size: 0.85em;
-            border-radius: 16px;
-            margin-top: 25px;
+            border-radius: 10px;
+            margin-top: 20px;
         }
 
-        /* Modern Lists */
+        /* Info Box */
+        .info-box {
+            background: rgba(6, 182, 212, 0.08);
+            border: 1px solid rgba(6, 182, 212, 0.2);
+            color: var(--accent);
+            padding: 18px 22px;
+            font-size: 0.85em;
+            border-radius: 10px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            text-align: right;
+        }
+
+        /* Lists */
         .reveal ul, .reveal ol {
             text-align: right;
             direction: rtl;
@@ -351,11 +217,11 @@
         }
 
         .reveal ul li, .reveal ol li {
-            padding: 12px 0;
-            padding-right: 40px;
+            padding: 10px 0;
+            padding-right: 35px;
             position: relative;
             list-style: none;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            border-bottom: 1px solid rgba(255,255,255,0.04);
         }
 
         .reveal ul li:last-child, .reveal ol li:last-child {
@@ -368,13 +234,10 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 24px;
-            height: 24px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 6px;
         }
 
         .reveal ol {
@@ -391,15 +254,15 @@
             right: 0;
             top: 50%;
             transform: translateY(-50%);
-            width: 32px;
-            height: 32px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 10px;
+            width: 28px;
+            height: 28px;
+            background: var(--primary);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: 700;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
         /* Code Blocks */
@@ -407,184 +270,225 @@
             direction: ltr;
             text-align: left;
             width: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 10px;
             padding: 0;
-            margin: 25px 0;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            margin: 20px 0;
         }
 
         .reveal pre code {
-            padding: 25px !important;
-            border-radius: 16px;
+            padding: 20px !important;
+            border-radius: 10px;
             font-size: 0.85em;
             line-height: 1.5;
         }
 
-        /* Modern Tables */
+        /* Tables */
         .reveal table {
             width: 100%;
             border-collapse: separate;
             border-spacing: 0;
-            background: var(--glass);
-            border-radius: 16px;
+            background: var(--card-bg);
+            border-radius: 10px;
             overflow: hidden;
-            border: 1px solid var(--glass-border);
+            border: 1px solid var(--border);
         }
 
         .reveal table thead {
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(34, 211, 238, 0.3) 100%);
+            background: rgba(139, 92, 246, 0.15);
         }
 
         .reveal table th {
-            padding: 20px;
-            font-weight: 700;
+            padding: 16px;
+            font-weight: 600;
             color: white;
             text-align: right;
         }
 
         .reveal table td {
-            padding: 18px 20px;
-            border-top: 1px solid var(--glass-border);
+            padding: 14px 16px;
+            border-top: 1px solid var(--border);
             color: var(--text);
-        }
-
-        .reveal table tbody tr {
-            transition: background 0.3s ease;
-        }
-
-        .reveal table tbody tr:hover {
-            background: rgba(99, 102, 241, 0.1);
         }
 
         /* Badges */
         .badge {
             display: inline-block;
-            padding: 6px 14px;
-            border-radius: 100px;
+            padding: 4px 10px;
+            border-radius: 6px;
             font-size: 0.75em;
             font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .badge-primary {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: var(--primary);
             color: white;
         }
 
         .badge-success {
-            background: linear-gradient(135deg, #059669 0%, var(--success) 100%);
-            color: white;
+            background: var(--success);
+            color: var(--darker);
         }
 
         .badge-warning {
-            background: linear-gradient(135deg, #d97706 0%, var(--gold) 100%);
-            color: white;
+            background: var(--gold);
+            color: var(--darker);
         }
 
         .badge-danger {
-            background: linear-gradient(135deg, #dc2626 0%, var(--danger) 100%);
+            background: var(--danger);
             color: white;
         }
 
-        /* Grid Layouts */
+        .badge-accent {
+            background: var(--accent);
+            color: var(--darker);
+        }
+
+        /* Grids */
         .grid-2 {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 25px;
-            margin: 30px 0;
+            gap: 20px;
+            margin: 25px 0;
         }
 
         .grid-3 {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-            margin: 30px 0;
+            gap: 18px;
+            margin: 25px 0;
         }
 
         .grid-4 {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 30px 0;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .grid-5 {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 12px;
+            margin: 25px 0;
+        }
+
+        /* V Cards for 5 V's */
+        .v-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px 15px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .v-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+        }
+
+        .v-card:nth-child(1)::before { background: var(--primary); }
+        .v-card:nth-child(2)::before { background: var(--accent); }
+        .v-card:nth-child(3)::before { background: var(--gold); }
+        .v-card:nth-child(4)::before { background: var(--success); }
+        .v-card:nth-child(5)::before { background: var(--secondary); }
+
+        .v-card .v-letter {
+            font-size: 2.5em;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .v-card:nth-child(1) .v-letter { color: var(--primary); }
+        .v-card:nth-child(2) .v-letter { color: var(--accent); }
+        .v-card:nth-child(3) .v-letter { color: var(--gold); }
+        .v-card:nth-child(4) .v-letter { color: var(--success); }
+        .v-card:nth-child(5) .v-letter { color: var(--secondary); }
+
+        .v-card h4 {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 6px;
+        }
+
+        .v-card p {
+            color: var(--text-muted);
+            font-size: 0.75em;
+            margin: 0;
+            line-height: 1.5;
         }
 
         /* Compare Cards */
         .compare-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
             text-align: center;
-            transition: all 0.4s ease;
         }
 
-        .compare-card.bad {
-            border-color: rgba(248, 113, 113, 0.3);
+        .compare-card.traditional {
+            border-color: rgba(239, 68, 68, 0.3);
         }
 
-        .compare-card.good {
-            border-color: rgba(52, 211, 153, 0.3);
-        }
-
-        .compare-card.bad:hover {
-            box-shadow: 0 0 40px -10px rgba(248, 113, 113, 0.4);
-        }
-
-        .compare-card.good:hover {
-            box-shadow: 0 0 40px -10px rgba(52, 211, 153, 0.4);
+        .compare-card.bigdata {
+            border-color: rgba(16, 185, 129, 0.3);
         }
 
         .compare-card h4 {
-            font-size: 1.1em;
-            margin-bottom: 15px;
+            font-size: 1em;
+            margin-bottom: 12px;
         }
 
-        .compare-card.bad h4 {
+        .compare-card.traditional h4 {
             color: var(--danger);
         }
 
-        .compare-card.good h4 {
+        .compare-card.bigdata h4 {
             color: var(--success);
         }
 
-        .compare-card .keyword {
-            font-size: 1.4em;
-            font-weight: 700;
+        .compare-card .icon-big {
+            font-size: 2.5em;
             margin: 15px 0;
-            color: white;
         }
 
         .compare-card .tags {
             display: flex;
             flex-direction: column;
-            gap: 8px;
-            margin-top: 15px;
+            gap: 6px;
+            margin-top: 12px;
         }
 
         .compare-card .tag {
-            padding: 8px 16px;
-            border-radius: 8px;
+            padding: 6px 12px;
+            border-radius: 6px;
             font-size: 0.8em;
         }
 
-        .compare-card.bad .tag {
-            background: rgba(248, 113, 113, 0.1);
+        .compare-card.traditional .tag {
+            background: rgba(239, 68, 68, 0.1);
             color: var(--danger);
         }
 
-        .compare-card.good .tag {
-            background: rgba(52, 211, 153, 0.1);
+        .compare-card.bigdata .tag {
+            background: rgba(16, 185, 129, 0.1);
             color: var(--success);
         }
 
-        /* Stats Display */
+        /* Stats */
         .stats-row {
             display: flex;
             justify-content: center;
-            gap: 40px;
+            gap: 50px;
             margin: 40px 0;
         }
 
@@ -593,145 +497,16 @@
         }
 
         .stat-number {
-            font-size: 3em;
+            font-size: 2.8em;
             font-weight: 900;
-            background: linear-gradient(135deg, var(--primary-light) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: var(--primary-light);
             line-height: 1;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .stat-label {
             color: var(--text-muted);
             font-size: 0.9em;
-        }
-
-        /* Timeline */
-        .timeline {
-            position: relative;
-            padding-right: 50px;
-            margin: 30px 0;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            right: 20px;
-            top: 0;
-            bottom: 0;
-            width: 3px;
-            background: linear-gradient(to bottom, var(--primary), var(--accent));
-            border-radius: 3px;
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            right: -38px;
-            top: 25px;
-            width: 16px;
-            height: 16px;
-            background: var(--primary);
-            border-radius: 50%;
-            box-shadow: 0 0 20px var(--primary);
-        }
-
-        .timeline-item h4 {
-            color: var(--primary-light);
-            margin-bottom: 8px;
-        }
-
-        .timeline-item p {
-            color: var(--text-muted);
-            font-size: 0.9em;
-        }
-
-        /* Navigation Hint */
-        .nav-hint {
-            position: fixed;
-            bottom: 30px;
-            left: 30px;
-            padding: 12px 20px;
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 12px;
-            font-size: 13px;
-            color: var(--text-muted);
-            z-index: 100;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            backdrop-filter: blur(10px);
-        }
-
-        .nav-hint i {
-            color: var(--accent);
-            animation: bounce 2s ease-in-out infinite;
-        }
-
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(5px); }
-        }
-
-        /* Progress Bar */
-        .progress-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: rgba(255,255,255,0.1);
-            z-index: 100;
-        }
-
-        .progress-bar .progress {
-            height: 100%;
-            background: linear-gradient(90deg, var(--primary), var(--accent), var(--secondary));
-            width: 0%;
-            transition: width 0.3s ease;
-        }
-
-        /* Slide-specific Backgrounds */
-        .intro-slide {
-            position: relative;
-        }
-
-        .intro-slide::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, transparent 70%);
-            border-radius: 50%;
-            animation: glow 4s ease-in-out infinite;
-            z-index: -1;
-        }
-
-        @keyframes glow {
-            0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
-            50% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
-        }
-
-        /* Chapter Headers */
-        .chapter-number {
-            font-size: 6em;
-            font-weight: 900;
-            opacity: 0.1;
-            position: absolute;
-            top: 20px;
-            right: 50px;
-            color: var(--primary);
         }
 
         /* Feature List */
@@ -742,9 +517,9 @@
         .feature-item {
             display: flex;
             align-items: flex-start;
-            gap: 20px;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.05);
+            gap: 18px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.04);
         }
 
         .feature-item:last-child {
@@ -752,22 +527,22 @@
         }
 
         .feature-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 14px;
+            width: 44px;
+            height: 44px;
+            background: var(--primary);
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 20px;
+            font-size: 18px;
             color: white;
             flex-shrink: 0;
         }
 
         .feature-content h4 {
             color: white;
-            margin-bottom: 5px;
-            font-size: 1.1em;
+            margin-bottom: 4px;
+            font-size: 1em;
         }
 
         .feature-content p {
@@ -776,130 +551,37 @@
             margin: 0;
         }
 
-        /* Metric Cards */
-        .metric-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 25px;
+        /* Tech Cards */
+        .tech-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 22px;
             text-align: center;
+            position: relative;
         }
 
-        .metric-card .metric-icon {
+        .tech-card .tech-icon {
             font-size: 2.5em;
-            margin-bottom: 15px;
-        }
-
-        .metric-card h4 {
-            color: var(--accent);
-            font-size: 1.4em;
-            margin-bottom: 8px;
-        }
-
-        .metric-card .metric-desc {
-            color: var(--text-muted);
-            font-size: 0.8em;
             margin-bottom: 12px;
         }
 
-        .metric-card .metric-value {
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
+        .tech-card h4 {
             color: white;
-            padding: 8px 16px;
-            border-radius: 8px;
-            font-weight: 700;
-            display: inline-block;
+            font-size: 1.1em;
+            margin-bottom: 6px;
         }
 
-        /* Funnel Diagram */
-        .funnel {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            margin: 30px 0;
+        .tech-card .tech-type {
+            color: var(--accent);
+            font-size: 0.75em;
+            margin-bottom: 10px;
         }
 
-        .funnel-level {
-            padding: 15px;
-            text-align: center;
-            border-radius: 10px;
-            color: white;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-
-        .funnel-level:hover {
-            transform: scale(1.05);
-        }
-
-        .funnel-level:nth-child(1) {
-            width: 100%;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-        }
-
-        .funnel-level:nth-child(2) {
-            width: 75%;
-            background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);
-        }
-
-        .funnel-level:nth-child(3) {
-            width: 50%;
-            background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-        }
-
-        /* Definition Text */
-        .definition {
-            font-size: 0.85em;
+        .tech-card p {
             color: var(--text-muted);
-            font-style: italic;
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Fragments Enhancement */
-        .reveal .fragment {
-            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .reveal .fragment.visible {
-            opacity: 1;
-            transform: translateX(0);
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--darker);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .grid-2, .grid-3, .grid-4 {
-                grid-template-columns: 1fr;
-            }
-            
-            .reveal h1 {
-                font-size: 2.5em;
-            }
-            
-            .reveal h2 {
-                font-size: 1.8em;
-            }
-            
-            .stats-row {
-                flex-direction: column;
-                gap: 20px;
-            }
+            font-size: 0.8em;
+            line-height: 1.5;
         }
 
         /* Flow Diagram */
@@ -913,225 +595,198 @@
         }
 
         .flow-step {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 20px 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 28px;
             text-align: center;
-            min-width: 150px;
+            min-width: 140px;
         }
 
         .flow-step i {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 8px;
             display: block;
         }
 
         .flow-step.step-1 i { color: var(--primary); }
         .flow-step.step-2 i { color: var(--accent); }
-        .flow-step.step-3 i { color: var(--success); }
+        .flow-step.step-3 i { color: var(--gold); }
+        .flow-step.step-4 i { color: var(--success); }
 
         .flow-arrow {
-            font-size: 1.5em;
+            font-size: 1.3em;
             color: var(--text-muted);
         }
 
-        /* EEAT Cards */
-        .eeat-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            margin: 30px 0;
-        }
-
-        .eeat-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 25px;
-            text-align: right;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .eeat-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            right: 0;
-            width: 5px;
-            height: 100%;
-        }
-
-        .eeat-card:nth-child(1)::before { background: var(--primary); }
-        .eeat-card:nth-child(2)::before { background: var(--accent); }
-        .eeat-card:nth-child(3)::before { background: var(--gold); }
-        .eeat-card:nth-child(4)::before { background: var(--success); }
-
-        .eeat-card h4 {
-            color: white;
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        .eeat-card p {
-            color: var(--text-muted);
-            font-size: 0.85em;
-            margin: 0;
-        }
-
-        /* Link Flow Visualization */
-        .link-flow {
+        /* Pipeline */
+        .pipeline {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 30px;
-            margin: 40px 0;
+            gap: 0;
+            margin: 35px 0;
         }
 
-        .link-node {
-            width: 120px;
-            height: 120px;
-            background: var(--glass);
-            border: 2px solid var(--primary);
-            border-radius: 50%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .link-node.main {
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3) 0%, rgba(99, 102, 241, 0.1) 100%);
-            border-color: var(--accent);
-        }
-
-        .link-node i {
-            font-size: 2em;
-            color: var(--primary);
-        }
-
-        .link-node span {
-            font-size: 0.75em;
-            color: var(--text-muted);
-            margin-top: 8px;
-        }
-
-        .link-connector {
-            width: 50px;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            position: relative;
-        }
-
-        .link-connector::after {
-            content: '';
-            position: absolute;
-            left: -5px;
-            top: -4px;
-            width: 0;
-            height: 0;
-            border-top: 5px solid transparent;
-            border-bottom: 5px solid transparent;
-            border-right: 8px solid var(--primary);
-        }
-
-        /* Slide Title Icon */
-        .slide-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        /* Animated Underline */
-        .highlight-text {
-            position: relative;
-            display: inline-block;
-        }
-
-        .highlight-text::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
-            border-radius: 3px;
-        }
-
-        /* Tool Cards */
-        .tool-card {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 20px;
-            padding: 30px;
+        .pipeline-step {
+            padding: 20px 30px;
             text-align: center;
-            transition: all 0.4s ease;
+            color: white;
+            font-weight: 600;
+            position: relative;
+            min-width: 150px;
+        }
+
+        .pipeline-step:nth-child(1) { background: var(--primary); border-radius: 8px 0 0 8px; }
+        .pipeline-step:nth-child(2) { background: var(--accent); }
+        .pipeline-step:nth-child(3) { background: var(--gold); color: var(--darker); }
+        .pipeline-step:nth-child(4) { background: var(--success); border-radius: 0 8px 8px 0; }
+
+        .pipeline-step i {
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 8px;
+        }
+
+        /* Analytics Cards */
+        .analytics-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 25px;
+            text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .tool-card::before {
+        .analytics-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
         }
 
-        .tool-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 30px 60px -20px rgba(99, 102, 241, 0.4);
+        .analytics-card:nth-child(1)::before { background: var(--primary); }
+        .analytics-card:nth-child(2)::before { background: var(--accent); }
+        .analytics-card:nth-child(3)::before { background: var(--success); }
+
+        .analytics-card i {
+            font-size: 2.2em;
+            margin-bottom: 15px;
         }
 
-        .tool-card i {
-            font-size: 3em;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
+        .analytics-card:nth-child(1) i { color: var(--primary); }
+        .analytics-card:nth-child(2) i { color: var(--accent); }
+        .analytics-card:nth-child(3) i { color: var(--success); }
 
-        .tool-card h4 {
+        .analytics-card h4 {
             color: white;
-            font-size: 1.2em;
+            font-size: 1.1em;
+            margin-bottom: 8px;
+        }
+
+        .analytics-card .question {
+            color: var(--gold);
+            font-size: 0.9em;
             margin-bottom: 10px;
         }
 
-        .tool-card p {
+        .analytics-card p {
             color: var(--text-muted);
             font-size: 0.8em;
             line-height: 1.6;
         }
 
-        /* Final Slide */
+        /* Use Case Cards */
+        .usecase-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .usecase-card i {
+            font-size: 2em;
+            margin-bottom: 12px;
+            color: var(--accent);
+        }
+
+        .usecase-card h4 {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 8px;
+        }
+
+        .usecase-card p {
+            color: var(--text-muted);
+            font-size: 0.8em;
+            margin: 0;
+        }
+
+        /* Data Sources */
+        .data-source {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 15px 20px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            margin: 10px 0;
+        }
+
+        .data-source i {
+            font-size: 1.8em;
+            color: var(--primary);
+        }
+
+        .data-source .info {
+            text-align: right;
+        }
+
+        .data-source .info h4 {
+            color: white;
+            font-size: 1em;
+            margin-bottom: 4px;
+        }
+
+        .data-source .info p {
+            color: var(--text-muted);
+            font-size: 0.8em;
+            margin: 0;
+        }
+
+        /* Slide Icon */
+        .slide-icon {
+            font-size: 2.5em;
+            margin-bottom: 18px;
+            display: block;
+        }
+
+        /* Final Formula */
         .final-formula {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
-            margin: 40px 0;
+            margin: 35px 0;
         }
 
         .formula-item {
-            background: var(--glass);
-            border: 1px solid var(--glass-border);
-            border-radius: 16px;
-            padding: 20px 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 18px 25px;
             text-align: center;
         }
 
         .formula-item i {
-            font-size: 2em;
-            margin-bottom: 10px;
+            font-size: 1.8em;
+            margin-bottom: 8px;
             display: block;
         }
 
@@ -1140,43 +795,158 @@
         .formula-item:nth-child(3) i { color: var(--success); }
 
         .formula-operator {
-            font-size: 2em;
-            color: var(--gold);
+            font-size: 1.8em;
+            color: var(--text-muted);
         }
 
         .formula-result {
-            background: linear-gradient(135deg, var(--gold) 0%, #f59e0b 100%);
+            background: var(--gold);
             color: var(--darker);
-            padding: 25px 40px;
-            border-radius: 16px;
+            padding: 20px 35px;
+            border-radius: 12px;
             font-weight: 700;
-            font-size: 1.3em;
+            font-size: 1.2em;
         }
 
-        /* Accessibility */
+        /* Definition */
+        .definition {
+            font-size: 0.85em;
+            color: var(--text-muted);
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* Highlight text */
+        .highlight-text {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* Big Number */
+        .big-number {
+            font-size: 4em;
+            font-weight: 900;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        /* Comparison Table */
+        .comparison-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .comparison-item {
+            text-align: center;
+        }
+
+        .comparison-item .number {
+            font-size: 3em;
+            font-weight: 900;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .comparison-item .label {
+            color: var(--text-muted);
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3, .grid-4, .grid-5 {
+                grid-template-columns: 1fr;
+            }
+            
+            .reveal h1 {
+                font-size: 2.2em;
+            }
+            
+            .reveal h2 {
+                font-size: 1.6em;
+            }
+            
+            .stats-row {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .final-formula, .pipeline {
+                flex-direction: column;
+            }
+        }
+
+        /* Navigation hint */
+        .nav-hint {
+            position: fixed;
+            bottom: 25px;
+            left: 25px;
+            padding: 10px 16px;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 12px;
+            color: var(--text-muted);
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-hint i {
+            color: var(--accent);
+        }
+
+        /* Reveal controls */
         .reveal .controls button {
             color: var(--primary);
         }
 
         .reveal .progress span {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: var(--primary);
+        }
+
+        /* Data Visualization */
+        .data-viz {
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 15px;
+            margin: 30px 0;
+            height: 200px;
+        }
+
+        .data-bar {
+            width: 60px;
+            background: linear-gradient(to top, var(--primary), var(--accent));
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+        .data-bar span {
+            position: absolute;
+            bottom: -30px;
+            font-size: 0.8em;
+            color: var(--text-muted);
+        }
+
+        .data-bar .value {
+            color: white;
+            font-weight: 700;
+            font-size: 0.9em;
         }
     </style>
 </head>
 
 <body>
-<!-- Floating Particles Background -->
-<div class="particles">
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-    <div class="particle"></div>
-</div>
 
 <div class="nav-hint">
     <i class="fas fa-arrow-down"></i>
@@ -1187,182 +957,143 @@
     <div class="slides">
 
         <!-- INTRO SLIDE -->
-        <section class="intro-slide">
-            <div style="margin-bottom: 30px;">
-                <i class="fas fa-rocket" style="font-size: 4em; color: var(--primary); animation: pulse 2s ease-in-out infinite;"></i>
+        <section>
+            <div style="margin-bottom: 25px;">
+                <i class="fas fa-database" style="font-size: 3.5em; color: var(--primary);"></i>
             </div>
-            <h1>سئو چیست؟</h1>
-            <h3 style="color: var(--text-muted); font-weight: 400; margin-top: 20px;">
-                Search Engine Optimization
+            <h1>کلان داده چیست؟</h1>
+            <h3 style="color: var(--text-muted); font-weight: 400; margin-top: 18px;">
+                Big Data
             </h3>
-            <p style="text-align: center; margin-top: 40px;">
-                <!-- <span class="badge badge-primary">نسخه ۲۰۲۴</span> -->
+            <p style="color: var(--text-muted); font-size: 0.95em; margin-top: 30px;">
+                انقلاب داده‌ای قرن ۲۱
             </p>
-            <!-- <div class="stats-row" style="margin-top: 60px;">
-                <div class="stat-item">
-                    <div class="stat-number">۶</div>
-                    <div class="stat-label">فصل آموزشی</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">+۵۰</div>
-                    <div class="stat-label">نکته کاربردی</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">۱۰۰٪</div>
-                    <div class="stat-label">عملی و کاربردی</div>
-                </div>
-            </div> -->
-            <div style="margin-top: 50px; font-size: 0.75em; color: var(--text-muted);">
+            <div style="margin-top: 45px; font-size: 0.75em; color: var(--text-muted);">
                 <i class="fas fa-keyboard"></i>
                 جهت ناوبری از کلیدهای جهت‌نما استفاده کنید
             </div>
         </section>
 
-        <!-- CHAPTER 1: FOUNDATIONS -->
+        <!-- CHAPTER 1: INTRODUCTION -->
         <section>
             <section>
-                <span class="chapter-number">۱</span>
-                <i class="fas fa-brain slide-icon" style="color: var(--primary);"></i>
-                <h2>درک موتور جستجو</h2>
+                <i class="fas fa-question-circle slide-icon" style="color: var(--primary);"></i>
+                <h2>مقدمه: دنیای داده</h2>
                 <p style="color: var(--text-muted); font-size: 1.1em;">
-                    قبل از اینکه بهینه کنیم، باید بفهمیم گوگل چطور فکر می‌کند.
+                    ما در عصر داده زندگی می‌کنیم. هر ثانیه حجم عظیمی داده تولید می‌شود.
                 </p>
-                
-                <div class="flow-diagram">
-                    <div class="flow-step step-1">
-                        <i class="fas fa-spider"></i>
-                        <div>خزش</div>
-                        <small style="color: var(--text-muted);">Crawling</small>
+
+                <div class="stats-row">
+                    <div class="stat-item fragment">
+                        <div class="stat-number">2.5</div>
+                        <div class="stat-label">اگزابایت داده روزانه</div>
                     </div>
-                    <div class="flow-arrow">←</div>
-                    <div class="flow-step step-2">
-                        <i class="fas fa-database"></i>
-                        <div>ایندکس</div>
-                        <small style="color: var(--text-muted);">Indexing</small>
+                    <div class="stat-item fragment">
+                        <div class="stat-number">90%</div>
+                        <div class="stat-label">داده‌های جهان در ۲ سال اخیر</div>
                     </div>
-                    <div class="flow-arrow">←</div>
-                    <div class="flow-step step-3">
-                        <i class="fas fa-trophy"></i>
-                        <div>رتبه‌بندی</div>
-                        <small style="color: var(--text-muted);">Ranking</small>
+                    <div class="stat-item fragment">
+                        <div class="stat-number">175</div>
+                        <div class="stat-label">زتابایت تا ۲۰۲۵</div>
                     </div>
                 </div>
 
                 <p class="definition">
                     <i class="fas fa-arrow-down"></i>
-                    برای توضیحات عمیق دکمه پایین را بزنید
+                    برای توضیحات بیشتر کلید پایین را بزنید
                 </p>
             </section>
 
             <section>
-                <h3><i class="fas fa-spider" style="color: var(--primary); margin-left: 15px;"></i>۱. خزش (Crawling)</h3>
-                <p>ربات‌های گوگل (Googlebot) دائماً در حال اسکن وب هستند و از طریق لینک‌ها صفحات را کشف می‌کنند.</p>
+                <h3><i class="fas fa-book-open" style="color: var(--accent); margin-left: 15px;"></i>تعریف کلان داده</h3>
                 
-                <div class="glass-card">
-                    <h4 style="color: var(--danger); margin-bottom: 20px;">
-                        <i class="fas fa-exclamation-triangle" style="margin-left: 10px;"></i>
-                        مشکلات رایج این مرحله:
-                    </h4>
-                    <div class="feature-list">
-                        <div class="feature-item">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%);">
-                                <i class="fas fa-link-slash"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>لینک‌های شکسته</h4>
-                                <p>خطاهای 404 که مانع خزش می‌شوند</p>
-                            </div>
+                <div class="glass-card" style="text-align: center;">
+                    <p style="font-size: 1.2em; color: white; margin-bottom: 20px;">
+                        کلان داده (Big Data) به مجموعه داده‌هایی گفته می‌شود که:
+                    </p>
+                    <div style="color: var(--text-muted); font-size: 1.1em;">
+                        <span class="highlight-text">حجم</span>، 
+                        <span class="highlight-text">سرعت</span> یا 
+                        <span class="highlight-text">تنوع</span> آن‌ها به قدری زیاد است که 
+                        <br>ابزارهای سنتی قادر به پردازش آن‌ها نیستند.
+                    </div>
+                </div>
+
+                <div class="grid-2" style="margin-top: 30px;">
+                    <div class="compare-card traditional">
+                        <h4>
+                            <i class="fas fa-times-circle" style="margin-left: 10px;"></i>
+                            داده‌های سنتی
+                        </h4>
+                        <div class="icon-big">📊</div>
+                        <div class="tags">
+                            <span class="tag">Excel & SQL</span>
+                            <span class="tag">گیگابایت</span>
+                            <span class="tag">ساختاریافته</span>
                         </div>
-                        <div class="feature-item">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%);">
-                                <i class="fas fa-ban"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>مسدود شدن توسط Robots.txt</h4>
-                                <p>تنظیمات نادرست که دسترسی ربات‌ها را می‌بندد</p>
-                            </div>
-                        </div>
-                        <div class="feature-item">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%);">
-                                <i class="fas fa-diagram-project"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>معماری غلط سایت</h4>
-                                <p>صفحات جزیره‌ای بدون لینک داخلی</p>
-                            </div>
+                    </div>
+                    <div class="compare-card bigdata">
+                        <h4>
+                            <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
+                            کلان داده
+                        </h4>
+                        <div class="icon-big">🌐</div>
+                        <div class="tags">
+                            <span class="tag">Hadoop & Spark</span>
+                            <span class="tag">پتابایت+</span>
+                            <span class="tag">همه انواع</span>
                         </div>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h3><i class="fas fa-database" style="color: var(--accent); margin-left: 15px;"></i>۲. ایندکس (Indexing)</h3>
-                <p>بعد از پیدا کردن صفحه، گوگل محتوا را می‌خواند و در دیتابیس عظیم خود ذخیره می‌کند.</p>
+                <h3><i class="fas fa-stream" style="color: var(--gold); margin-left: 15px;"></i>منابع تولید داده</h3>
                 
-                <div class="warning-box">
-                    <i class="fas fa-exclamation-circle" style="font-size: 1.5em;"></i>
+                <div class="grid-2">
                     <div>
-                        <strong>نکته مهم:</strong> اگر صفحه‌ای ایندکس نشود، در نتایج جستجو <strong>اصلاً وجود نخواهد داشت</strong>.
+                        <div class="data-source fragment">
+                            <i class="fas fa-mobile-alt"></i>
+                            <div class="info">
+                                <h4>دستگاه‌های موبایل</h4>
+                                <p>۵ میلیارد کاربر موبایل در جهان</p>
+                            </div>
+                        </div>
+                        <div class="data-source fragment">
+                            <i class="fas fa-share-alt"></i>
+                            <div class="info">
+                                <h4>شبکه‌های اجتماعی</h4>
+                                <p>۵۰۰ میلیون توییت روزانه</p>
+                            </div>
+                        </div>
+                        <div class="data-source fragment">
+                            <i class="fas fa-shopping-cart"></i>
+                            <div class="info">
+                                <h4>تجارت الکترونیک</h4>
+                                <p>میلیاردها تراکنش روزانه</p>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <pre><code class="html">
-<!-- کدی که به گوگل می‌گوید این صفحه را ایندکس نکن -->
-<meta name="robots" content="noindex, nofollow">
-                </code></pre>
-
-                <div class="pro-tip">
-                    <i class="fas fa-lightbulb"></i>
                     <div>
-                        <strong>نکته حرفه‌ای:</strong> با استفاده از Google Search Console می‌توانید چک کنید کدام صفحات ایندکس شده‌اند و کدام‌ها مشکل دارند.
-                    </div>
-                </div>
-            </section>
-            
-            <section>
-                <h3><i class="fas fa-trophy" style="color: var(--gold); margin-left: 15px;"></i>۳. رتبه‌بندی (Ranking)</h3>
-                <p>وقتی کاربر جستجو می‌کند، الگوریتم گوگل از بین میلیاردها صفحه، بهترین‌ها را انتخاب می‌کند.</p>
-
-                <div class="glass-card">
-                    <h4 style="margin-bottom: 25px;">
-                        <i class="fas fa-cogs" style="color: var(--accent); margin-left: 10px;"></i>
-                        فاکتورهای کلیدی (بیش از ۲۰۰ مورد)
-                    </h4>
-                    <div class="grid-2">
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-bullseye" style="color: white;"></i>
-                            </div>
-                            <div>
-                                <strong style="color: white;">مرتبط بودن</strong>
-                                <p style="color: var(--text-muted); font-size: 0.8em; margin: 0;">Relevance</p>
+                        <div class="data-source fragment">
+                            <i class="fas fa-microchip"></i>
+                            <div class="info">
+                                <h4>اینترنت اشیا (IoT)</h4>
+                                <p>۷۵ میلیارد دستگاه متصل تا ۲۰۲۵</p>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--success) 0%, #059669 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-shield-alt" style="color: white;"></i>
-                            </div>
-                            <div>
-                                <strong style="color: white;">اعتبار دامنه</strong>
-                                <p style="color: var(--text-muted); font-size: 0.8em; margin: 0;">Authority</p>
+                        <div class="data-source fragment">
+                            <i class="fas fa-video"></i>
+                            <div class="info">
+                                <h4>ویدیو و استریم</h4>
+                                <p>۵۰۰ ساعت ویدیو در دقیقه (یوتیوب)</p>
                             </div>
                         </div>
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--gold) 0%, #f59e0b 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-user-check" style="color: white;"></i>
-                            </div>
-                            <div>
-                                <strong style="color: white;">تجربه کاربری</strong>
-                                <p style="color: var(--text-muted); font-size: 0.8em; margin: 0;">UX</p>
-                            </div>
-                        </div>
-                        <div style="display: flex; align-items: center; gap: 15px;">
-                            <div style="width: 50px; height: 50px; background: linear-gradient(135deg, var(--secondary) 0%, #ec4899 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
-                                <i class="fas fa-clock" style="color: white;"></i>
-                            </div>
-                            <div>
-                                <strong style="color: white;">تازگی محتوا</strong>
-                                <p style="color: var(--text-muted); font-size: 0.8em; margin: 0;">Freshness</p>
+                        <div class="data-source fragment">
+                            <i class="fas fa-dna"></i>
+                            <div class="info">
+                                <h4>علوم و تحقیقات</h4>
+                                <p>ژنوم انسان = ۲۰۰ گیگابایت</p>
                             </div>
                         </div>
                     </div>
@@ -1370,381 +1101,894 @@
             </section>
         </section>
 
-        <!-- CHAPTER 2: KEYWORDS -->
+        <!-- CHAPTER 2: THE 5 V's -->
         <section>
             <section>
-                <span class="chapter-number">۲</span>
-                <i class="fas fa-key slide-icon" style="color: var(--gold);"></i>
-                <h2>استراتژی کلمات کلیدی</h2>
-                <p style="color: var(--text-muted); font-size: 1.1em;">سنگ بنای هر کمپین سئوی موفق</p>
+                <i class="fas fa-cubes slide-icon" style="color: var(--gold);"></i>
+                <h2>۵ ویژگی کلان داده (5 V's)</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">
+                    ویژگی‌های اصلی که کلان داده را تعریف می‌کنند
+                </p>
 
-                <div class="funnel">
-                    <div class="funnel-level">
-                        <i class="fas fa-search" style="margin-left: 10px;"></i>
-                        حجم جستجوی بالا (Search Volume)
+                <div class="grid-5" style="margin-top: 40px;">
+                    <div class="v-card fragment">
+                        <div class="v-letter">V</div>
+                        <h4>Volume</h4>
+                        <p>حجم</p>
                     </div>
-                    <div class="funnel-level">
-                        <i class="fas fa-chart-line" style="margin-left: 10px;"></i>
-                        سختی رقابت پایین (Keyword Difficulty)
+                    <div class="v-card fragment">
+                        <div class="v-letter">V</div>
+                        <h4>Velocity</h4>
+                        <p>سرعت</p>
                     </div>
-                    <div class="funnel-level">
-                        <i class="fas fa-shopping-cart" style="margin-left: 10px;"></i>
-                        احتمال خرید بالا (Conversion Rate)
+                    <div class="v-card fragment">
+                        <div class="v-letter">V</div>
+                        <h4>Variety</h4>
+                        <p>تنوع</p>
+                    </div>
+                    <div class="v-card fragment">
+                        <div class="v-letter">V</div>
+                        <h4>Veracity</h4>
+                        <p>صحت</p>
+                    </div>
+                    <div class="v-card fragment">
+                        <div class="v-letter">V</div>
+                        <h4>Value</h4>
+                        <p>ارزش</p>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h3><i class="fas fa-text-width" style="color: var(--accent); margin-left: 15px;"></i>انواع کلمات کلیدی</h3>
+                <h3><i class="fas fa-weight-hanging" style="color: var(--primary); margin-left: 15px;"></i>۱. حجم (Volume)</h3>
+                <p>مقدار داده‌ای که باید پردازش شود</p>
                 
-                <div class="grid-2">
-                    <div class="compare-card bad">
-                        <h4>
-                            <i class="fas fa-times-circle" style="margin-left: 10px;"></i>
-                            Short-tail (Head)
-                        </h4>
-                        <div class="keyword">"کفش"</div>
-                        <div class="tags">
-                            <span class="tag"><i class="fas fa-skull" style="margin-left: 5px;"></i> رقابت وحشتناک</span>
-                            <span class="tag"><i class="fas fa-question" style="margin-left: 5px;"></i> هدف نامشخص</span>
-                            <span class="tag"><i class="fas fa-chart-line-down" style="margin-left: 5px;"></i> نرخ تبدیل پایین</span>
+                <div class="glass-card">
+                    <div class="comparison-row">
+                        <div class="comparison-item fragment">
+                            <div class="number" style="color: var(--text-muted);">KB</div>
+                            <div class="label">۱۹۷۰s</div>
+                        </div>
+                        <div class="comparison-item fragment">
+                            <div class="number" style="color: var(--accent);">GB</div>
+                            <div class="label">۲۰۰۰s</div>
+                        </div>
+                        <div class="comparison-item fragment">
+                            <div class="number" style="color: var(--gold);">TB</div>
+                            <div class="label">۲۰۱۰s</div>
+                        </div>
+                        <div class="comparison-item fragment">
+                            <div class="number" style="color: var(--success);">PB</div>
+                            <div class="label">۲۰۲۰s</div>
+                        </div>
+                        <div class="comparison-item fragment">
+                            <div class="number" style="color: var(--secondary);">EB</div>
+                            <div class="label">آینده</div>
                         </div>
                     </div>
-                    <div class="compare-card good">
-                        <h4>
-                            <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
-                            Long-tail
-                        </h4>
-                        <div class="keyword">"خرید کفش ورزشی مردانه قرمز"</div>
-                        <div class="tags">
-                            <span class="tag"><i class="fas fa-smile" style="margin-left: 5px;"></i> رقابت کمتر</span>
-                            <span class="tag"><i class="fas fa-bullseye" style="margin-left: 5px;"></i> هدف مشخص</span>
-                            <span class="tag"><i class="fas fa-chart-line" style="margin-left: 5px;"></i> نرخ تبدیل بالا</span>
-                        </div>
+                </div>
+
+                <div class="info-box fragment">
+                    <i class="fas fa-info-circle" style="font-size: 1.5em;"></i>
+                    <div>
+                        <strong>مثال:</strong> فیسبوک روزانه بیش از ۴ پتابایت داده جدید ذخیره می‌کند!
                     </div>
                 </div>
             </section>
 
             <section>
-                <h3><i class="fas fa-brain" style="color: var(--secondary); margin-left: 15px;"></i>هدف جستجو (Search Intent)</h3>
-                <p>گوگل می‌فهمد کاربر چه می‌خواهد. شما هم باید بفهمید!</p>
+                <h3><i class="fas fa-tachometer-alt" style="color: var(--accent); margin-left: 15px;"></i>۲. سرعت (Velocity)</h3>
+                <p>سرعت تولید و پردازش داده</p>
+                
+                <div class="grid-3">
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🐢</div>
+                        <h4>Batch Processing</h4>
+                        <div class="tech-type">پردازش دسته‌ای</div>
+                        <p>پردازش داده‌ها در بازه‌های زمانی مشخص (ساعتی/روزانه)</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🐇</div>
+                        <h4>Near Real-time</h4>
+                        <div class="tech-type">نزدیک به لحظه‌ای</div>
+                        <p>پردازش با تأخیر چند ثانیه‌ای تا چند دقیقه‌ای</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">⚡</div>
+                        <h4>Real-time</h4>
+                        <div class="tech-type">لحظه‌ای</div>
+                        <p>پردازش همزمان با تولید داده (میلی‌ثانیه)</p>
+                    </div>
+                </div>
 
-                <div class="glass-card">
-                    <div class="feature-list">
-                        <div class="feature-item fragment">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);">
-                                <i class="fas fa-info-circle"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Informational (اطلاعاتی)</h4>
-                                <p>"چگونه قهوه دم کنیم؟" → <span class="badge badge-primary">مقاله بلاگ</span></p>
-                            </div>
+                <div class="pro-tip fragment">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>کاربرد:</strong> سیستم‌های تشخیص تقلب بانکی باید در میلی‌ثانیه تصمیم بگیرند!
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-shapes" style="color: var(--gold); margin-left: 15px;"></i>۳. تنوع (Variety)</h3>
+                <p>انواع مختلف داده‌ها که باید پردازش شوند</p>
+                
+                <div class="grid-3">
+                    <div class="glass-card fragment" style="text-align: center;">
+                        <i class="fas fa-table" style="font-size: 2em; color: var(--primary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="color: white;">Structured</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85em;">ساختاریافته</p>
+                        <div style="margin-top: 15px;">
+                            <span class="badge badge-primary" style="margin: 3px;">SQL</span>
+                            <span class="badge badge-primary" style="margin: 3px;">Excel</span>
+                            <span class="badge badge-primary" style="margin: 3px;">CSV</span>
                         </div>
-                        <div class="feature-item fragment">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--accent) 0%, #06b6d4 100%);">
-                                <i class="fas fa-compass"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Navigational (ناوبری)</h4>
-                                <p>"ورود به سایت دیجیکالا" → <span class="badge badge-primary">صفحه اصلی</span></p>
-                            </div>
+                    </div>
+                    <div class="glass-card fragment" style="text-align: center;">
+                        <i class="fas fa-puzzle-piece" style="font-size: 2em; color: var(--accent); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="color: white;">Semi-Structured</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85em;">نیمه‌ساختاریافته</p>
+                        <div style="margin-top: 15px;">
+                            <span class="badge badge-accent" style="margin: 3px;">JSON</span>
+                            <span class="badge badge-accent" style="margin: 3px;">XML</span>
+                            <span class="badge badge-accent" style="margin: 3px;">Log</span>
                         </div>
-                        <div class="feature-item fragment">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--success) 0%, #059669 100%);">
-                                <i class="fas fa-shopping-bag"></i>
-                            </div>
-                            <div class="feature-content">
-                                <h4>Transactional (خرید)</h4>
-                                <p>"خرید آیفون ۱۵ پرو" → <span class="badge badge-success">صفحه محصول</span></p>
-                            </div>
+                    </div>
+                    <div class="glass-card fragment" style="text-align: center;">
+                        <i class="fas fa-photo-video" style="font-size: 2em; color: var(--secondary); margin-bottom: 15px; display: block;"></i>
+                        <h4 style="color: white;">Unstructured</h4>
+                        <p style="color: var(--text-muted); font-size: 0.85em;">بدون ساختار</p>
+                        <div style="margin-top: 15px;">
+                            <span class="badge badge-danger" style="margin: 3px; background: var(--secondary);">تصویر</span>
+                            <span class="badge badge-danger" style="margin: 3px; background: var(--secondary);">ویدیو</span>
+                            <span class="badge badge-danger" style="margin: 3px; background: var(--secondary);">متن</span>
                         </div>
                     </div>
                 </div>
 
                 <div class="warning-box fragment">
-                    <i class="fas fa-ban" style="font-size: 1.5em;"></i>
+                    <i class="fas fa-exclamation-triangle" style="font-size: 1.5em;"></i>
                     <div>
-                        <strong>اشتباه بزرگ:</strong> برای کلمه "خرید گوشی" مقاله ننویسید! صفحه محصول بسازید.
+                        <strong>چالش:</strong> بیش از ۸۰٪ داده‌های سازمانی بدون ساختار هستند!
                     </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-check-double" style="color: var(--success); margin-left: 15px;"></i>۴. صحت (Veracity)</h3>
+                <p>کیفیت و قابلیت اعتماد داده‌ها</p>
+                
+                <div class="glass-card">
+                    <div class="feature-list">
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--danger);">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>داده‌های ناقص</h4>
+                                <p>فیلدهای خالی، اطلاعات گم‌شده</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--gold);">
+                                <i class="fas fa-clone"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>داده‌های تکراری</h4>
+                                <p>رکوردهای مشابه و duplicate</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--accent);">
+                                <i class="fas fa-random"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>داده‌های متناقض</h4>
+                                <p>اطلاعات متفاوت در منابع مختلف</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="concept-box fragment">
+                    <strong>قانون طلایی:</strong> Garbage In = Garbage Out
+                    <br>
+                    <span style="color: var(--text-muted);">اگر داده ورودی بی‌کیفیت باشد، نتایج تحلیل هم بی‌ارزش خواهند بود.</span>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-gem" style="color: var(--secondary); margin-left: 15px;"></i>۵. ارزش (Value)</h3>
+                <p>مهم‌ترین V! داده بدون ارزش، فقط هزینه است.</p>
+                
+                <div class="glass-card" style="text-align: center;">
+                    <div style="font-size: 4em; margin-bottom: 20px;">💎</div>
+                    <p style="font-size: 1.2em; color: white; margin-bottom: 10px;">
+                        هدف نهایی کلان داده:
+                    </p>
+                    <p style="font-size: 1.5em; color: var(--gold);">
+                        تبدیل داده خام به بینش تجاری قابل اقدام
+                    </p>
+                </div>
+
+                <div class="success-box fragment">
+                    <i class="fas fa-chart-line" style="margin-left: 10px;"></i>
+                    <strong>مثال:</strong> آمازون با تحلیل داده‌ها، ۳۵٪ فروش خود را از سیستم توصیه‌گر به دست می‌آورد!
                 </div>
             </section>
         </section>
 
-        <!-- CHAPTER 3: ON-PAGE SEO -->
+        <!-- CHAPTER 3: TECHNOLOGIES -->
         <section>
             <section>
-                <span class="chapter-number">۳</span>
-                <i class="fas fa-code slide-icon" style="color: var(--accent);"></i>
-                <h2>سئو داخلی (On-Page)</h2>
-                <p style="color: var(--text-muted); font-size: 1.1em;">بهینه‌سازی هر چیزی که داخل سایت خودتان است</p>
+                <i class="fas fa-tools slide-icon" style="color: var(--accent);"></i>
+                <h2>فناوری‌های کلان داده</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">ابزارهای اصلی برای ذخیره و پردازش</p>
             </section>
 
             <section>
-                <h3><i class="fas fa-medal" style="color: var(--gold); margin-left: 15px;"></i>E-E-A-T: استاندارد طلایی گوگل</h3>
-                <p>برای محتواهای حساس (YMYL - پول یا سلامتی)، گوگل این ۴ فاکتور را بررسی می‌کند:</p>
-
-                <div class="eeat-grid">
-                    <div class="eeat-card fragment">
-                        <h4><i class="fas fa-user-check" style="margin-left: 10px;"></i>Experience</h4>
-                        <p>آیا نویسنده تجربه واقعی و عملی در این موضوع دارد؟</p>
+                <h3><i class="fas fa-elephant" style="color: var(--gold); margin-left: 15px;"></i>Apache Hadoop</h3>
+                <p>پایه و اساس انقلاب کلان داده</p>
+                
+                <div class="grid-2">
+                    <div class="glass-card fragment">
+                        <h4 style="color: var(--accent); margin-bottom: 15px;">
+                            <i class="fas fa-hdd" style="margin-left: 10px;"></i>
+                            HDFS
+                        </h4>
+                        <p style="color: var(--text-muted);">
+                            سیستم فایل توزیع‌شده برای ذخیره پتابایت‌ها داده روی کلاستر سرورها
+                        </p>
                     </div>
-                    <div class="eeat-card fragment">
-                        <h4><i class="fas fa-graduation-cap" style="margin-left: 10px;"></i>Expertise</h4>
-                        <p>آیا نویسنده متخصص و دارای دانش تخصصی است؟</p>
-                    </div>
-                    <div class="eeat-card fragment">
-                        <h4><i class="fas fa-crown" style="margin-left: 10px;"></i>Authoritativeness</h4>
-                        <p>آیا وب‌سایت به عنوان منبع معتبر شناخته شده؟</p>
-                    </div>
-                    <div class="eeat-card fragment">
-                        <h4><i class="fas fa-shield-alt" style="margin-left: 10px;"></i>Trustworthiness</h4>
-                        <p>آیا سایت امن، شفاف و قابل اعتماد است؟</p>
+                    <div class="glass-card fragment">
+                        <h4 style="color: var(--success); margin-bottom: 15px;">
+                            <i class="fas fa-cogs" style="margin-left: 10px;"></i>
+                            MapReduce
+                        </h4>
+                        <p style="color: var(--text-muted);">
+                            مدل برنامه‌نویسی برای پردازش موازی داده‌های حجیم
+                        </p>
                     </div>
                 </div>
-            </section>
 
-            <section>
-                <h3><i class="fas fa-heading" style="color: var(--primary); margin-left: 15px;"></i>ساختار هدینگ‌ها</h3>
-                <p>متن شما باید اسکلت‌بندی منظم و منطقی داشته باشد.</p>
+                <pre><code class="python">
+# مثال ساده MapReduce برای شمارش کلمات
+def mapper(text):
+    for word in text.split():
+        yield (word, 1)
 
-                <pre><code class="html">
-<h1>عنوان اصلی صفحه (فقط یکی!)</h1>
-  <h2>تیتر بخش اول</h2>
-    <h3>زیرمجموعه بخش اول</h3>
-    <h3>زیرمجموعه دیگر</h3>
-  <h2>تیتر بخش دوم</h2>
-    <h3>زیرمجموعه بخش دوم</h3>
+def reducer(word, counts):
+    yield (word, sum(counts))
                 </code></pre>
+            </section>
 
-                <div class="pro-tip">
-                    <i class="fas fa-robot"></i>
-                    <div>
-                        ربات‌ها ابتدا تگ‌های H1 تا H6 را می‌خوانند تا موضوع صفحه را بفهمند. ساختار درست = درک بهتر!
+            <section>
+                <h3><i class="fas fa-bolt" style="color: var(--gold); margin-left: 15px;"></i>Apache Spark</h3>
+                <p>موتور پردازش سریع و همه‌منظوره</p>
+                
+                <div class="glass-card" style="text-align: center;">
+                    <div class="comparison-row">
+                        <div class="comparison-item">
+                            <div class="number" style="color: var(--danger);">1x</div>
+                            <div class="label">Hadoop MapReduce</div>
+                        </div>
+                        <div class="comparison-item">
+                            <div class="number" style="color: var(--success);">100x</div>
+                            <div class="label">Apache Spark</div>
+                        </div>
+                    </div>
+                    <p style="color: var(--text-muted); margin-top: 20px;">
+                        پردازش در حافظه = سرعت ۱۰۰ برابر!
+                    </p>
+                </div>
+
+                <div class="grid-4" style="margin-top: 25px;">
+                    <div class="icon-card fragment">
+                        <div class="icon" style="background: var(--primary);">
+                            <i class="fas fa-database"></i>
+                        </div>
+                        <h4>Spark SQL</h4>
+                        <p>کوئری داده</p>
+                    </div>
+                    <div class="icon-card fragment">
+                        <div class="icon" style="background: var(--accent);">
+                            <i class="fas fa-stream"></i>
+                        </div>
+                        <h4>Streaming</h4>
+                        <p>پردازش لحظه‌ای</p>
+                    </div>
+                    <div class="icon-card fragment">
+                        <div class="icon" style="background: var(--gold);">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>MLlib</h4>
+                        <p>یادگیری ماشین</p>
+                    </div>
+                    <div class="icon-card fragment">
+                        <div class="icon" style="background: var(--secondary);">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h4>GraphX</h4>
+                        <p>پردازش گراف</p>
                     </div>
                 </div>
             </section>
 
             <section>
-                <h3><i class="fas fa-project-diagram" style="color: var(--success); margin-left: 15px;"></i>لینک‌سازی داخلی</h3>
-                <p>قدرت صفحات را بین هم تقسیم کنید.</p>
+                <h3><i class="fas fa-database" style="color: var(--success); margin-left: 15px;"></i>پایگاه‌داده‌های NoSQL</h3>
+                <p>جایگزین‌های انعطاف‌پذیر برای SQL سنتی</p>
+                
+                <div class="grid-4">
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">📄</div>
+                        <h4>Document</h4>
+                        <div class="tech-type">MongoDB</div>
+                        <p>ذخیره JSON و اسناد انعطاف‌پذیر</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🔑</div>
+                        <h4>Key-Value</h4>
+                        <div class="tech-type">Redis</div>
+                        <p>سریع‌ترین برای Cache</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">📊</div>
+                        <h4>Column</h4>
+                        <div class="tech-type">Cassandra</div>
+                        <p>مقیاس‌پذیری بی‌نهایت</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🕸️</div>
+                        <h4>Graph</h4>
+                        <div class="tech-type">Neo4j</div>
+                        <p>روابط پیچیده</p>
+                    </div>
+                </div>
 
-                <div class="link-flow">
-                    <div class="link-node main">
-                        <i class="fas fa-home"></i>
-                        <span>صفحه اصلی</span>
+                <div class="pro-tip fragment">
+                    <i class="fas fa-lightbulb"></i>
+                    <div>
+                        <strong>انتخاب درست:</strong> هر نوع NoSQL برای یک کاربرد خاص مناسب است. اشتباه رایج = استفاده از یک ابزار برای همه کارها!
                     </div>
-                    <div class="link-connector"></div>
-                    <div class="link-node">
-                        <i class="fas fa-file-alt"></i>
-                        <span>صفحه داخلی</span>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-water" style="color: var(--accent); margin-left: 15px;"></i>Apache Kafka</h3>
+                <p>پلتفرم استریم داده توزیع‌شده</p>
+                
+                <div class="pipeline">
+                    <div class="pipeline-step">
+                        <i class="fas fa-database"></i>
+                        Producer
                     </div>
-                    <div class="link-connector"></div>
-                    <div class="link-node">
-                        <i class="fas fa-file-alt"></i>
-                        <span>صفحه داخلی</span>
+                    <div class="pipeline-step">
+                        <i class="fas fa-server"></i>
+                        Kafka Broker
+                    </div>
+                    <div class="pipeline-step">
+                        <i class="fas fa-layer-group"></i>
+                        Topic/Partition
+                    </div>
+                    <div class="pipeline-step">
+                        <i class="fas fa-users"></i>
+                        Consumer
                     </div>
                 </div>
 
                 <div class="glass-card" style="text-align: center;">
-                    <p style="margin: 0; color: var(--text-muted);">
-                        صفحه اصلی مانند یک منبع آب است. لینک‌های داخلی لوله‌هایی هستند که این آب (اعتبار) را به صفحات دیگر می‌رسانند.
+                    <p style="font-size: 1.1em; color: white; margin-bottom: 15px;">
+                        ویژگی‌های کلیدی Kafka
                     </p>
+                    <div class="grid-3">
+                        <div style="text-align: center;">
+                            <span style="font-size: 2em;">🚀</span>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">میلیون‌ها پیام در ثانیه</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <span style="font-size: 2em;">💾</span>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">ذخیره‌سازی پایدار</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <span style="font-size: 2em;">🔄</span>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">تحمل خطا بالا</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </section>
 
-        <!-- CHAPTER 4: TECHNICAL SEO -->
+        <!-- CHAPTER 4: DATA PIPELINE -->
         <section>
             <section>
-                <span class="chapter-number">۴</span>
-                <i class="fas fa-cogs slide-icon" style="color: var(--danger);"></i>
-                <h2>سئو تکنیکال (Technical)</h2>
-                <p style="color: var(--text-muted); font-size: 1.1em;">زبان صحبت با ماشین‌ها</p>
-                <div class="warning-box" style="max-width: 600px; margin: 30px auto;">
-                    <i class="fas fa-exclamation-triangle"></i>
-                    <div>
-                        زیباترین سایت دنیا اگر تکنیکال ضعیفی داشته باشد، رتبه نمی‌گیرد!
-                    </div>
-                </div>
+                <i class="fas fa-exchange-alt slide-icon" style="color: var(--secondary);"></i>
+                <h2>خط لوله داده (Data Pipeline)</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">سفر داده از منبع تا بینش</p>
             </section>
 
             <section>
-                <h3><i class="fas fa-heartbeat" style="color: var(--success); margin-left: 15px;"></i>Core Web Vitals</h3>
-                <p>فاکتورهای رسمی گوگل برای تجربه کاربری</p>
-
-                <div class="grid-3" style="margin-top: 40px;">
-                    <div class="metric-card">
-                        <div class="metric-icon">⚡</div>
-                        <h4>LCP</h4>
-                        <p class="metric-desc">سرعت لود بزرگترین المان</p>
-                        <div class="metric-value">زیر 2.5 ثانیه</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon">👆</div>
-                        <h4>INP</h4>
-                        <p class="metric-desc">سرعت واکنش به تعامل</p>
-                        <div class="metric-value">زیر 200ms</div>
-                    </div>
-                    <div class="metric-card">
-                        <div class="metric-icon">📐</div>
-                        <h4>CLS</h4>
-                        <p class="metric-desc">ثبات بصری صفحه</p>
-                        <div class="metric-value">کمتر از 0.1</div>
-                    </div>
-                </div>
-            </section>
-
-            <section>
-                <h3><i class="fas fa-tags" style="color: var(--secondary); margin-left: 15px;"></i>اسکیما (Schema Markup)</h3>
-                <p>کدهایی که به گوگل کمک می‌کنند محتوا را دقیق‌تر بفهمد</p>
-
-                <pre><code class="json" style="font-size: 14px;">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "کفش نایکی ایرمکس",
-  "image": "https://example.com/shoe.jpg",
-  "description": "بهترین کفش برای دویدن",
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "256"
-  }
-}
-                </code></pre>
-
-                <div class="success-box">
-                    <i class="fas fa-star" style="margin-left: 10px; color: var(--gold);"></i>
-                    این کد باعث نمایش ستاره‌های امتیاز در نتایج گوگل (Rich Snippets) می‌شود!
-                </div>
-            </section>
-        </section>
-
-        <!-- CHAPTER 5: OFF-PAGE -->
-        <section>
-            <section>
-                <span class="chapter-number">۵</span>
-                <i class="fas fa-globe slide-icon" style="color: var(--primary);"></i>
-                <h2>سئو خارجی (Off-Page)</h2>
-                <p style="color: var(--text-muted); font-size: 1.1em;">شهرت شما در دنیای وب</p>
+                <h3><i class="fas fa-route" style="color: var(--primary); margin-left: 15px;"></i>مراحل پایپلاین</h3>
                 
-                <div class="glass-card" style="max-width: 700px; margin: 40px auto; text-align: center;">
-                    <i class="fas fa-vote-yea" style="font-size: 3em; color: var(--primary); margin-bottom: 20px;"></i>
-                    <p style="font-size: 1.2em; margin: 0;">
-                        گوگل لینک‌ها را به عنوان <span class="highlight-text">"رای اعتماد"</span> می‌بیند.
-                        <br>
-                        <span style="color: var(--text-muted); font-size: 0.85em;">هرچه سایت معتبرتری به شما لینک دهد، رای سنگین‌تری دارید.</span>
-                    </p>
+                <div class="flow-diagram">
+                    <div class="flow-step step-1 fragment">
+                        <i class="fas fa-download"></i>
+                        <div>Ingestion</div>
+                        <small style="color: var(--text-muted);">جمع‌آوری</small>
+                    </div>
+                    <div class="flow-arrow fragment">←</div>
+                    <div class="flow-step step-2 fragment">
+                        <i class="fas fa-broom"></i>
+                        <div>Processing</div>
+                        <small style="color: var(--text-muted);">پردازش</small>
+                    </div>
+                    <div class="flow-arrow fragment">←</div>
+                    <div class="flow-step step-3 fragment">
+                        <i class="fas fa-warehouse"></i>
+                        <div>Storage</div>
+                        <small style="color: var(--text-muted);">ذخیره</small>
+                    </div>
+                    <div class="flow-arrow fragment">←</div>
+                    <div class="flow-step step-4 fragment">
+                        <i class="fas fa-chart-pie"></i>
+                        <div>Analysis</div>
+                        <small style="color: var(--text-muted);">تحلیل</small>
+                    </div>
+                </div>
+
+                <div class="glass-card fragment">
+                    <h4 style="margin-bottom: 20px; color: var(--accent);">
+                        <i class="fas fa-sync-alt" style="margin-left: 10px;"></i>
+                        ETL vs ELT
+                    </h4>
+                    <div class="grid-2">
+                        <div>
+                            <strong style="color: white;">ETL (سنتی)</strong>
+                            <p style="color: var(--text-muted); font-size: 0.9em;">Extract → Transform → Load</p>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">تبدیل قبل از ذخیره</p>
+                        </div>
+                        <div>
+                            <strong style="color: white;">ELT (مدرن)</strong>
+                            <p style="color: var(--text-muted); font-size: 0.9em;">Extract → Load → Transform</p>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">تبدیل بعد از ذخیره</p>
+                        </div>
+                    </div>
                 </div>
             </section>
-            
-            <section>
-                <h3><i class="fas fa-link" style="color: var(--accent); margin-left: 15px;"></i>انواع بک‌لینک</h3>
 
+            <section>
+                <h3><i class="fas fa-industry" style="color: var(--gold); margin-left: 15px;"></i>معماری Data Lake</h3>
+                <p>ذخیره همه داده‌ها در فرمت خام</p>
+                
+                <div class="glass-card" style="text-align: center;">
+                    <div style="margin-bottom: 20px;">
+                        <span style="font-size: 4em;">🏞️</span>
+                    </div>
+                    <p style="color: white; font-size: 1.1em; margin-bottom: 15px;">
+                        Data Lake = مخزن عظیم داده خام
+                    </p>
+                    <p style="color: var(--text-muted);">
+                        همه انواع داده (ساختاریافته، نیمه‌ساختاریافته، بدون ساختار) در یک مکان
+                    </p>
+                </div>
+
+                <div class="grid-2 fragment">
+                    <div class="compare-card bigdata">
+                        <h4><i class="fas fa-check" style="margin-left: 8px;"></i>مزایا</h4>
+                        <div class="tags" style="margin-top: 15px;">
+                            <span class="tag">انعطاف‌پذیری</span>
+                            <span class="tag">هزینه پایین</span>
+                            <span class="tag">مقیاس‌پذیری</span>
+                        </div>
+                    </div>
+                    <div class="compare-card traditional">
+                        <h4><i class="fas fa-times" style="margin-left: 8px;"></i>چالش‌ها</h4>
+                        <div class="tags" style="margin-top: 15px;">
+                            <span class="tag">خطر Data Swamp</span>
+                            <span class="tag">نیاز به Governance</span>
+                            <span class="tag">پیچیدگی مدیریت</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-layer-group" style="color: var(--accent); margin-left: 15px;"></i>معماری Lambda</h3>
+                <p>ترکیب پردازش دسته‌ای و لحظه‌ای</p>
+                
+                <div class="glass-card">
+                    <div style="text-align: center; margin-bottom: 25px;">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 200'%3E%3Crect fill='%230f172a' width='400' height='200'/%3E%3Ctext x='200' y='30' fill='%2394a3b8' text-anchor='middle' font-size='14'%3EData Sources%3C/text%3E%3Crect x='150' y='40' width='100' height='30' fill='%238b5cf6' rx='5'/%3E%3Ctext x='200' y='60' fill='white' text-anchor='middle' font-size='12'%3EIngestion%3C/text%3E%3Cpath d='M200 70 L200 85 L100 100 M200 85 L300 100' stroke='%2394a3b8' fill='none'/%3E%3Crect x='50' y='100' width='100' height='30' fill='%2306b6d4' rx='5'/%3E%3Ctext x='100' y='120' fill='%23020617' text-anchor='middle' font-size='11'%3EBatch Layer%3C/text%3E%3Crect x='250' y='100' width='100' height='30' fill='%23f59e0b' rx='5'/%3E%3Ctext x='300' y='120' fill='%23020617' text-anchor='middle' font-size='11'%3ESpeed Layer%3C/text%3E%3Cpath d='M100 130 L100 145 L200 160 M300 130 L300 145 L200 160' stroke='%2394a3b8' fill='none'/%3E%3Crect x='150' y='160' width='100' height='30' fill='%2310b981' rx='5'/%3E%3Ctext x='200' y='180' fill='%23020617' text-anchor='middle' font-size='12'%3EServing Layer%3C/text%3E%3C/svg%3E" alt="Lambda Architecture" style="width: 100%; max-width: 450px;">
+                    </div>
+                    
+                    <div class="grid-3">
+                        <div style="text-align: center;">
+                            <span class="badge badge-accent">Batch Layer</span>
+                            <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 8px;">پردازش کامل و دقیق</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <span class="badge badge-warning">Speed Layer</span>
+                            <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 8px;">پردازش لحظه‌ای</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <span class="badge badge-success">Serving Layer</span>
+                            <p style="color: var(--text-muted); font-size: 0.8em; margin-top: 8px;">ارائه نتایج</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+        <!-- CHAPTER 5: ANALYTICS -->
+        <section>
+            <section>
+                <i class="fas fa-chart-bar slide-icon" style="color: var(--success);"></i>
+                <h2>تحلیل کلان داده</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">تبدیل داده به بینش و تصمیم</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-glasses" style="color: var(--primary); margin-left: 15px;"></i>سطوح تحلیل</h3>
+                
+                <div class="grid-3">
+                    <div class="analytics-card fragment">
+                        <i class="fas fa-eye"></i>
+                        <h4>Descriptive</h4>
+                        <div class="question">چه اتفاقی افتاد؟</div>
+                        <p>گزارش‌ها، داشبوردها، KPIها</p>
+                    </div>
+                    <div class="analytics-card fragment">
+                        <i class="fas fa-crystal-ball"></i>
+                        <h4>Predictive</h4>
+                        <div class="question">چه اتفاقی خواهد افتاد؟</div>
+                        <p>پیش‌بینی، یادگیری ماشین</p>
+                    </div>
+                    <div class="analytics-card fragment">
+                        <i class="fas fa-magic"></i>
+                        <h4>Prescriptive</h4>
+                        <div class="question">چه باید کرد؟</div>
+                        <p>بهینه‌سازی، توصیه‌گرها</p>
+                    </div>
+                </div>
+
+                <div class="pro-tip fragment">
+                    <i class="fas fa-arrow-up"></i>
+                    <div>
+                        هرچه بالاتر بروید، ارزش تجاری بیشتر اما پیچیدگی فنی هم بالاتر!
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-robot" style="color: var(--secondary); margin-left: 15px;"></i>یادگیری ماشین در کلان داده</h3>
+                
                 <div class="glass-card">
                     <div class="feature-list">
                         <div class="feature-item fragment">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--success) 0%, #059669 100%);">
-                                <i class="fas fa-heart"></i>
+                            <div class="feature-icon" style="background: var(--primary);">
+                                <i class="fas fa-graduation-cap"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Natural Links <span class="badge badge-success">بهترین نوع</span></h4>
-                                <p>وقتی محتوای عالی دارید و بقیه خودشان لینک می‌دهند</p>
+                                <h4>Supervised Learning</h4>
+                                <p>طبقه‌بندی مشتریان، پیش‌بینی ریزش</p>
                             </div>
                         </div>
                         <div class="feature-item fragment">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--gold) 0%, #f59e0b 100%);">
-                                <i class="fas fa-handshake"></i>
+                            <div class="feature-icon" style="background: var(--accent);">
+                                <i class="fas fa-object-group"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Manual Links <span class="badge badge-warning">نیاز به تلاش</span></h4>
-                                <p>رپورتاژ آگهی، همکاری در فروش، پست مهمان</p>
+                                <h4>Unsupervised Learning</h4>
+                                <p>خوشه‌بندی، کشف الگو</p>
                             </div>
                         </div>
                         <div class="feature-item fragment">
-                            <div class="feature-icon" style="background: linear-gradient(135deg, var(--danger) 0%, #dc2626 100%);">
-                                <i class="fas fa-skull-crossbones"></i>
+                            <div class="feature-icon" style="background: var(--success);">
+                                <i class="fas fa-comments"></i>
                             </div>
                             <div class="feature-content">
-                                <h4>Self-Created <span class="badge badge-danger">خطرناک</span></h4>
-                                <p>لینک در کامنت‌ها و فروم‌ها - بی‌ارزش و ریسکی</p>
+                                <h4>Deep Learning</h4>
+                                <p>پردازش تصویر، NLP، تشخیص گفتار</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+                <pre class="fragment"><code class="python">
+# مثال: یادگیری ماشین با PySpark
+from pyspark.ml.classification import RandomForestClassifier
+
+rf = RandomForestClassifier(numTrees=100, maxDepth=10)
+model = rf.fit(training_data)
+predictions = model.transform(test_data)
+                </code></pre>
+            </section>
+        </section>
+
+        <!-- CHAPTER 6: USE CASES -->
+        <section>
+            <section>
+                <i class="fas fa-briefcase slide-icon" style="color: var(--gold);"></i>
+                <h2>کاربردهای کلان داده</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">صنایع مختلف چگونه استفاده می‌کنند؟</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-industry" style="color: var(--accent); margin-left: 15px;"></i>صنایع کلیدی</h3>
+                
+                <div class="grid-3">
+                    <div class="usecase-card fragment">
+                        <i class="fas fa-university"></i>
+                        <h4>بانکداری</h4>
+                        <p>تشخیص تقلب، اعتبارسنجی، ریسک</p>
+                    </div>
+                    <div class="usecase-card fragment">
+                        <i class="fas fa-heartbeat"></i>
+                        <h4>بهداشت و درمان</h4>
+                        <p>تشخیص بیماری، داروسازی شخصی</p>
+                    </div>
+                    <div class="usecase-card fragment">
+                        <i class="fas fa-shopping-bag"></i>
+                        <h4>خرده‌فروشی</h4>
+                        <p>پیشنهاد محصول، مدیریت موجودی</p>
+                    </div>
+                    <div class="usecase-card fragment">
+                        <i class="fas fa-car"></i>
+                        <h4>حمل و نقل</h4>
+                        <p>بهینه‌سازی مسیر، خودران</p>
+                    </div>
+                    <div class="usecase-card fragment">
+                        <i class="fas fa-broadcast-tower"></i>
+                        <h4>مخابرات</h4>
+                        <p>پیش‌بینی ریزش، بهینه‌سازی شبکه</p>
+                    </div>
+                    <div class="usecase-card fragment">
+                        <i class="fas fa-city"></i>
+                        <h4>شهر هوشمند</h4>
+                        <p>ترافیک، انرژی، امنیت</p>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-star" style="color: var(--gold); margin-left: 15px;"></i>موردهای موفق</h3>
+                
+                <div class="grid-2">
+                    <div class="glass-card fragment">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <span style="font-size: 2em;">🎬</span>
+                            <h4 style="color: white; margin: 0;">Netflix</h4>
+                        </div>
+                        <p style="color: var(--text-muted);">
+                            ۸۰٪ محتوای دیده‌شده از طریق سیستم توصیه‌گر
+                        </p>
+                        <div class="success-box" style="margin-top: 15px;">
+                            صرفه‌جویی ۱ میلیارد دلار سالانه
+                        </div>
+                    </div>
+                    <div class="glass-card fragment">
+                        <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                            <span style="font-size: 2em;">🚗</span>
+                            <h4 style="color: white; margin: 0;">Uber</h4>
+                        </div>
+                        <p style="color: var(--text-muted);">
+                            پردازش ۱۰۰ میلیارد رویداد روزانه برای قیمت‌گذاری پویا
+                        </p>
+                        <div class="success-box" style="margin-top: 15px;">
+                            بهینه‌سازی زمان انتظار ۲۵٪
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card fragment" style="margin-top: 20px;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 2em;">🛒</span>
+                        <h4 style="color: white; margin: 0;">Walmart</h4>
+                    </div>
+                    <p style="color: var(--text-muted);">
+                        تحلیل ۲.۵ پتابایت داده مشتریان برای بهینه‌سازی موجودی
+                    </p>
+                    <p style="color: var(--success);">
+                        <i class="fas fa-chart-line" style="margin-left: 8px;"></i>
+                        افزایش ۱۰-۱۵٪ فروش آنلاین
+                    </p>
+                </div>
+            </section>
+        </section>
+
+        <!-- CHAPTER 7: CHALLENGES -->
+        <section>
+            <section>
+                <i class="fas fa-exclamation-triangle slide-icon" style="color: var(--danger);"></i>
+                <h2>چالش‌ها و راه‌حل‌ها</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">موانع رایج در پروژه‌های کلان داده</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-bug" style="color: var(--danger); margin-left: 15px;"></i>چالش‌های اصلی</h3>
+                
+                <div class="glass-card">
+                    <div class="feature-list">
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--danger);">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>امنیت و حریم خصوصی</h4>
+                                <p>GDPR، رمزنگاری، کنترل دسترسی</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--gold);">
+                                <i class="fas fa-users-cog"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>کمبود نیروی متخصص</h4>
+                                <p>Data Engineer، Data Scientist کمیاب هستند</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--accent);">
+                                <i class="fas fa-puzzle-piece"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>یکپارچه‌سازی داده</h4>
+                                <p>ترکیب داده‌ها از منابع مختلف</p>
+                            </div>
+                        </div>
+                        <div class="feature-item fragment">
+                            <div class="feature-icon" style="background: var(--secondary);">
+                                <i class="fas fa-dollar-sign"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>هزینه زیرساخت</h4>
+                                <p>سرورها، ذخیره‌سازی، نگهداری</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-lightbulb" style="color: var(--success); margin-left: 15px;"></i>بهترین شیوه‌ها</h3>
+                
+                <div class="grid-2">
+                    <div class="glass-card fragment">
+                        <h4 style="color: var(--success); margin-bottom: 15px;">
+                            <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
+                            شروع کوچک
+                        </h4>
+                        <p style="color: var(--text-muted);">
+                            با یک Proof of Concept کوچک شروع کنید، نه پروژه عظیم!
+                        </p>
+                    </div>
+                    <div class="glass-card fragment">
+                        <h4 style="color: var(--success); margin-bottom: 15px;">
+                            <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
+                            تمرکز بر کیفیت داده
+                        </h4>
+                        <p style="color: var(--text-muted);">
+                            قبل از تحلیل، داده‌ها را تمیز و استاندارد کنید.
+                        </p>
+                    </div>
+                    <div class="glass-card fragment">
+                        <h4 style="color: var(--success); margin-bottom: 15px;">
+                            <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
+                            Cloud-First
+                        </h4>
+                        <p style="color: var(--text-muted);">
+                            از سرویس‌های ابری (AWS, Azure, GCP) استفاده کنید.
+                        </p>
+                    </div>
+                    <div class="glass-card fragment">
+                        <h4 style="color: var(--success); margin-bottom: 15px;">
+                            <i class="fas fa-check-circle" style="margin-left: 10px;"></i>
+                            Data Governance
+                        </h4>
+                        <p style="color: var(--text-muted);">
+                            قوانین و سیاست‌های مشخص برای مدیریت داده.
+                        </p>
                     </div>
                 </div>
 
                 <div class="warning-box fragment">
                     <i class="fas fa-skull" style="font-size: 1.5em;"></i>
                     <div>
-                        <strong>هشدار جدی:</strong> خرید بک‌لینک‌های بی‌کیفیت و انبوه باعث پنالتی "Penguin" می‌شود!
+                        <strong>آمار تلخ:</strong> ۸۵٪ پروژه‌های Big Data به اهداف خود نمی‌رسند! (Gartner)
                     </div>
                 </div>
             </section>
         </section>
 
-        <!-- CHAPTER 6: TOOLS -->
-        <!-- <section>
-            <span class="chapter-number">۶</span>
-            <i class="fas fa-toolbox slide-icon" style="color: var(--gold);"></i>
-            <h2>جعبه ابزار متخصص سئو</h2>
-            
-            <div class="grid-4">
-                <div class="tool-card">
-                    <i class="fab fa-google"></i>
-                    <h4>Google Search Console</h4>
-                    <p>حیاتی‌ترین ابزار! بررسی سلامت سایت، ایندکس و کلیک‌ها</p>
+        <!-- CHAPTER 8: FUTURE -->
+        <section>
+            <section>
+                <i class="fas fa-rocket slide-icon" style="color: var(--secondary);"></i>
+                <h2>آینده کلان داده</h2>
+                <p style="color: var(--text-muted); font-size: 1.1em;">روندهای در حال ظهور</p>
+            </section>
+
+            <section>
+                <h3><i class="fas fa-crystal-ball" style="color: var(--accent); margin-left: 15px;"></i>ترندهای آینده</h3>
+                
+                <div class="grid-3">
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🤖</div>
+                        <h4>AI/ML Everywhere</h4>
+                        <div class="tech-type">هوش مصنوعی همه‌جا</div>
+                        <p>AutoML و یادگیری خودکار مدل‌ها</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🌐</div>
+                        <h4>Edge Computing</h4>
+                        <div class="tech-type">پردازش لبه</div>
+                        <p>پردازش داده در نزدیک‌ترین نقطه به منبع</p>
+                    </div>
+                    <div class="tech-card fragment">
+                        <div class="tech-icon">🔗</div>
+                        <h4>Data Mesh</h4>
+                        <div class="tech-type">مش داده</div>
+                        <p>معماری غیرمتمرکز و دامنه‌محور</p>
+                    </div>
                 </div>
-                <div class="tool-card">
-                    <i class="fas fa-chart-pie"></i>
-                    <h4>Google Analytics 4</h4>
-                    <p>بررسی رفتار کاربر، نرخ تبدیل و شناخت مخاطب</p>
+
+                <div class="glass-card fragment" style="margin-top: 25px;">
+                    <div class="grid-2">
+                        <div style="text-align: center;">
+                            <i class="fas fa-brain" style="font-size: 2.5em; color: var(--primary); margin-bottom: 15px; display: block;"></i>
+                            <h4 style="color: white;">Augmented Analytics</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">تحلیل تقویت‌شده با AI</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <i class="fas fa-atom" style="font-size: 2.5em; color: var(--secondary); margin-bottom: 15px; display: block;"></i>
+                            <h4 style="color: white;">Quantum Computing</h4>
+                            <p style="color: var(--text-muted); font-size: 0.85em;">محاسبات کوانتومی</p>
+                        </div>
+                    </div>
                 </div>
-                <div class="tool-card">
-                    <i class="fas fa-binoculars"></i>
-                    <h4>Ahrefs / Semrush</h4>
-                    <p>جاسوسی رقبا، تحقیق کلمات کلیدی و بررسی بک‌لینک</p>
-                </div>
-                <div class="tool-card">
-                    <i class="fas fa-frog"></i>
-                    <h4>Screaming Frog</h4>
-                    <p>خزشگر سایت برای پیدا کردن مشکلات فنی</p>
-                </div>
-            </div>
-        </section> -->
+            </section>
+        </section>
 
         <!-- END SLIDE -->
         <section>
-            <div style="margin-bottom: 30px;">
-                <i class="fas fa-flag-checkered" style="font-size: 4em; color: var(--gold);"></i>
+            <div style="margin-bottom: 25px;">
+                <i class="fas fa-flag-checkered" style="font-size: 3em; color: var(--gold);"></i>
             </div>
-            <h1>پایان</h1>
-            <p style="font-size: 1.3em; color: var(--text-muted); margin: 30px 0;">
-                سئو یک <span class="highlight-text">ماراتن</span> است، نه دوی سرعت.
+            <h1>جمع‌بندی</h1>
+            <p style="font-size: 1.3em; color: var(--text-muted); margin: 25px 0;">
+                کلان داده = <span class="highlight-text">قدرت تصمیم‌گیری مبتنی بر داده</span>
             </p>
 
             <div class="final-formula">
                 <div class="formula-item">
-                    <i class="fas fa-pen-fancy"></i>
-                    <div>محتوای باکیفیت</div>
+                    <i class="fas fa-database"></i>
+                    <div>جمع‌آوری درست</div>
                 </div>
                 <div class="formula-operator">+</div>
                 <div class="formula-item">
-                    <i class="fas fa-wrench"></i>
-                    <div>آپدیت فنی</div>
+                    <i class="fas fa-cogs"></i>
+                    <div>پردازش هوشمند</div>
                 </div>
                 <div class="formula-operator">+</div>
                 <div class="formula-item">
-                    <i class="fas fa-link"></i>
-                    <div>لینک‌سازی سالم</div>
+                    <i class="fas fa-chart-line"></i>
+                    <div>تحلیل عمیق</div>
                 </div>
                 <div class="formula-operator">=</div>
                 <div class="formula-result">
                     <i class="fas fa-trophy" style="margin-left: 10px;"></i>
-                    موفقیت پایدار
+                    مزیت رقابتی
                 </div>
             </div>
 
-            <div style="margin-top: 60px;">
+            <div class="concept-box" style="max-width: 700px; margin: 30px auto; text-align: center;">
+                <p style="margin: 0;">
+                    <strong style="color: var(--gold);">"بدون کلان داده، شرکت‌ها کور، کر و گیج در بزرگراه اینترنت هستند."</strong>
+                    <br>
+                    <span style="color: var(--text-muted); font-size: 0.9em;">— Geoffrey Moore</span>
+                </p>
+            </div>
+
+            <div style="margin-top: 50px;">
                 <p style="color: var(--text-muted); font-size: 0.9em;">
                     <i class="fas fa-heart" style="color: var(--danger);"></i>
                     با تشکر از توجه شما
@@ -1768,37 +2012,23 @@
         backgroundTransition: 'fade',
         plugins: [ RevealHighlight ],
         
-        // Enhanced settings
         width: 1200,
         height: 700,
         margin: 0.1,
         minScale: 0.2,
         maxScale: 1.5,
         
-        // Progress and controls
         progress: true,
         controls: true,
         controlsTutorial: true,
         controlsLayout: 'bottom-right',
         
-        // Slide settings
         autoSlide: 0,
         loop: false,
         shuffle: false,
         
-        // Touch and mouse
         touch: true,
         mouseWheel: false,
-    });
-
-    // Update progress bar manually if needed
-    Reveal.on('slidechanged', event => {
-        const totalSlides = Reveal.getTotalSlides();
-        const currentSlide = Reveal.getIndices().h + 1;
-        const progress = (currentSlide / totalSlides) * 100;
-        
-        // Optional: Add custom progress tracking here
-        console.log(`Slide ${currentSlide} of ${totalSlides}`);
     });
 </script>
 
